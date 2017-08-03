@@ -65,6 +65,11 @@ PRODUCT_PACKAGES += \
     Development
 endif
 
+# TWRP
+ifeq ($(WITH_TWRP),true)
+include vendor/slim/config/twrp.mk
+endif
+
 # Optional packages
 PRODUCT_PACKAGES += \
     Basic \
@@ -154,7 +159,7 @@ PRODUCT_PACKAGE_OVERLAYS += \
 # Slim version.
 PRODUCT_VERSION_MAJOR = $(PLATFORM_VERSION)
 PRODUCT_VERSION_MINOR = build
-PRODUCT_VERSION_MAINTENANCE = 1.4
+PRODUCT_VERSION_MAINTENANCE = 1.5
 ifdef SLIM_BUILD_EXTRA
     SLIM_POSTFIX := -$(SLIM_BUILD_EXTRA)
 endif
